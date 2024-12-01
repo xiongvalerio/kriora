@@ -243,161 +243,177 @@
             color: var(--text-color);
         }
 
-        @media (max-width: 768px) {
+        @media screen and (max-width: 768px) {
+            body {
+                font-size: 16px;
+                -webkit-text-size-adjust: 100%;
+                padding: 0;
+                margin: 0;
+            }
+
+            .navbar {
+                padding: 0.8rem;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                position: fixed;
+                width: 100%;
+                box-sizing: border-box;
+                background: var(--nav-color);
+                z-index: 1000;
+            }
+
+            .main-content {
+                padding-top: 70px;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+                margin: 0;
+            }
+
+            .tts-toggle {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin: 0;
+            }
+
+            .tts-label {
+                font-size: 0.9rem;
+            }
+
             .control-area {
+                padding: 1rem;
+            }
+
+            .record-button {
+                width: 80px;
+                height: 80px;
+                margin: 20px auto;
+            }
+
+            .language-container {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                padding: 0 1rem;
+            }
+
+            .language-group {
                 width: 100%;
             }
 
+            .language-label {
+                font-size: 0.9rem;
+                margin-bottom: 5px;
+            }
+
+            .language-select {
+                width: 100%;
+                padding: 10px;
+                font-size: 1rem;
+                margin: 5px 0;
+            }
+
+            .switch-button {
+                width: 40px;
+                height: 40px;
+                padding: 8px;
+                margin: 5px auto;
+            }
+
             .transcription-area {
-                width: 90%;
+                padding: 1rem;
+                margin-top: 1rem;
+            }
+
+            #originalTranscription,
+            #translatedTranscription {
+                width: 100% !important;
+                float: none !important;
+                padding: 0 !important;
+                margin-bottom: 1rem;
+            }
+
+            .transcription-container {
+                margin: 0.5rem 0;
+                padding: 1rem;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            #transcriptionText,
+            #translatedText {
+                font-size: 1rem;
+                line-height: 1.5;
+                margin: 8px 0;
+                word-break: break-word;
+            }
+
+            .speed-display {
+                width: 100%;
+                text-align: center;
+                padding: 8px;
+                margin: 10px 0;
+                font-size: 0.9rem;
+            }
+
+            .canvas-container {
+                width: 100%;
+                height: 60px;
+                margin: 10px 0;
+                overflow: hidden;
+            }
+
+            #waveform {
+                width: 100%;
+                height: 100%;
+            }
+
+            #timer {
+                font-size: 1rem;
+                text-align: center;
+                margin: 8px 0;
+            }
+
+            .message {
+                width: 100%;
+                box-sizing: border-box;
+                margin: 8px 0;
+                padding: 10px;
+                font-size: 0.9rem;
             }
         }
 
-        .waveform {
-            display: none;
-        }
-        .language-label {
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .waves {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 300%;
-            height: 300%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-        }
-
-        .wave {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 3px solid var(--accent-color);
-            border-radius: 50%;
-            opacity: 0;
-            animation: ripple 1.5s infinite;
-        }
-
-        @keyframes ripple {
-            0% {
-                transform: scale(0.3);
-                opacity: 0.8;
+        /* Small phones optimization */
+        @media screen and (max-width: 380px) {
+            body {
+                font-size: 14px;
             }
-            100% {
-                transform: scale(1);
-                opacity: 0;
+
+            .navbar {
+                padding: 0.6rem;
             }
-        }
 
-        .language-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px 0;
-        }
+            .logo {
+                font-size: 1.3rem;
+            }
 
-        .language-group {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            min-width: 200px;
-        }
+            .record-button {
+                width: 70px;
+                height: 70px;
+            }
 
-        .language-label {
-            font-weight: bold;
-            margin-bottom: 8px;
-            width: 100%;
-            text-align: left;
-        }
+            .language-label {
+                font-size: 0.85rem;
+            }
 
-        .language-select {
-            width: 100%;
-            padding: 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            font-size: 1em;
-        }
-
-        .switch-button {
-            background: var(--primary-color);
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            color: white;
-            transition: background-color 0.3s ease;
-            align-self: flex-end;
-            margin-bottom: 4px;
-        }
-
-        .switch-button:hover {
-            background: var(--button-hover);
-        }
-
-        button {
-            background-color: var(--primary-color);
-            color: var(--contrast-text);
-            border: 2px solid var(--contrast-text);
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
-        }
-
-        button:hover {
-            background-color: var(--button-hover);
-            border-color: var(--contrast-text);
-        }
-
-        button:focus {
-            outline: 4px solid var(--accent-color);
-            outline-offset: 2px;
-        }
-
-        button[disabled] {
-            background-color: #cccccc;
-            cursor: not-allowed;
-        }
-
-        .status-message {
-            background-color: var(--nav-color);
-            color: var(--contrast-text);
-            padding: 1rem;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-
-        .error-message {
-            background-color: var(--error-color);
-            color: var(--contrast-text);
-        }
-
-        .success-message {
-            background-color: var(--success-color);
-            color: var(--contrast-text);
-        }
-
-        a {
-            color: var(--link-color);
-            text-decoration: underline;
-        }
-
-        a:visited {
-            color: var(--visited-link);
-        }
-
-        a:hover {
-            text-decoration: none;
+            .language-select {
+                font-size: 0.9rem;
+                padding: 8px;
+            }
         }
     </style>
 </head>
