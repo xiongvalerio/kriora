@@ -28,5 +28,8 @@ The project integrates several external APIs to perform these tasks:
    Clone the project repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/php-audio-processing-api.git
-   cd php-audio-processing-api
+   git clone https://github.com/xiongvalerio/kriora.git
+  2. **Set up the api keys**
+     ```bash
+      export GROQ_API_KEY="your-groq-api-key"
+      export ELEVENLABS_API_KEY="your-elevenlabs-api-key"
