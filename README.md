@@ -9,7 +9,7 @@ This project implements a PHP-based API that allows users to:
 
 The project integrates several external APIs to perform these tasks:
 
-- **Whisper API**: For transcription.
+
 - **Groq API**: For translation.
 - **ElevenLabs API**: For text-to-speech conversion.
 
@@ -18,7 +18,7 @@ The project integrates several external APIs to perform these tasks:
 - **PHP 7.4+**: For running the script.
 - **cURL extension for PHP**: Required for making HTTP requests.
 - **API Keys**: You need valid API keys for the following services:
-  - Whisper API
+  
   - Groq API
   - ElevenLabs API
 
