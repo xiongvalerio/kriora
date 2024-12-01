@@ -1,20 +1,32 @@
-This project implements a PHP-based API that allows you to upload an audio file, transcribe it, translate the transcription to a target language, and convert the translated text to speech. It uses several external APIs:
+# PHP Audio Processing API
 
-Whisper API (for transcription)
-Groq API (for translation)
-ElevenLabs API (for text-to-speech conversion)
-Requirements
-PHP 7.4+ (for running the script).
-cURL extension for PHP.
-API keys for the following services:
-Whisper API (for transcription).
-Groq API (for translation).
-ElevenLabs API (for text-to-speech conversion).
-Installation
-Clone the repository
-Configure environment variables:
+This project implements a PHP-based API that allows users to:
 
-Set up your API keys by defining them in your environment or .env file.
+1. Upload an audio file.
+2. Transcribe the audio to text.
+3. Translate the transcription to a target language.
+4. Convert the translated text to speech.
 
-export GROQ_API_KEY="your-groq-api-key"
-export ELEVENLABS_API_KEY="your-elevenlabs-api-key"
+The project integrates several external APIs to perform these tasks:
+
+- **Whisper API**: For transcription.
+- **Groq API**: For translation.
+- **ElevenLabs API**: For text-to-speech conversion.
+
+## Requirements
+
+- **PHP 7.4+**: For running the script.
+- **cURL extension for PHP**: Required for making HTTP requests.
+- **API Keys**: You need valid API keys for the following services:
+  - Whisper API
+  - Groq API
+  - ElevenLabs API
+
+## Installation
+
+1. **Clone the Repository**  
+   Clone the project repository to your local machine:
+
+   ```bash
+   git clone https://github.com/your-username/php-audio-processing-api.git
+   cd php-audio-processing-api
